@@ -35,3 +35,10 @@ def add_message():
 def table():
 	return render_template("table.html")
 
+@app.route('/add_zone')
+def add_zone():
+	return ("add_zone")
+
+@app.route('/add_motor')
+def add_motor():
+	return ('Тут будем добавлять мотор')
