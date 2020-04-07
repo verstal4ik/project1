@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
- <head>
-   <title>Run APP PAGE2</title>
-   <meta charset="utf-8">
- </head>
- <body>
+{%extends "body.html"%}
+
+{% block content %}
  	<h1>Hello FLASK</h1>
   <p>
   	Делаю ФОРМУ 
@@ -19,5 +15,4 @@
  {%for mes in messages%}
 <div>{{mes.text}}&nbsp;<i>{{mes.tag}}</i></div>
  {%endfor%}
- </body> 
-</html>
+{%endblock%}

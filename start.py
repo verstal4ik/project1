@@ -15,12 +15,12 @@ def hello_world():
 
 @app.route('/main', methods = ['GET'])
 def main():
-	return render_template('index.html', name = 'БуддаБар')
+	return render_template('index.html', name = 'БуддаБар', title="RunAPP")
 
 
 @app.route('/main2', methods = ['GET'])
 def main2():
-	return render_template('page2.html', messages = messages)
+	return render_template('page2.html', messages = messages, title = "PAGE2")
 
 
 @app.route('/add_message', methods = ['POST'])
@@ -33,5 +33,5 @@ def add_message():
 
 @app.route('/table')
 def table():
-	return ("table Page")
+	return render_template("table.html")
 
