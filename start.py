@@ -29,3 +29,9 @@ def add_message():
 	tag = request.form['tag']
 	messages.append(Message(text, tag))
 	return redirect(url_for('main2'))
+
+
+@app.route('/table')
+def table():
+	return ("table Page")
+
