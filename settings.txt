@@ -1,0 +1,9 @@
+1. Заходим в папку к которой работаем
+2. Предварительно установлен pip install virtualenv
+3. virtualenv venv - имя папки где будет переменная окружения
+4. И активируем source venv/bin/activate
+5. pip install -r req.txt
+6. export FLASK_APP=start.py #указываем файл для запуска flask
+6.1 export FLASK_DEBUG=1 #включаем отладку
+7. flask run
+7.1 flask run --host=0.0.0.0 #с внешним доступом
