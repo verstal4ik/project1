@@ -9,10 +9,14 @@
  <form method="post" action="/add_message">
   	<input type="text" name="text">
   	<input type="text" name="tag">
-  	<button type="submit">Add message</button>
+  	<button type="submit">Добавить сообщение</button>
  </form>
  <h3>Список сообщений</h3>
  {%for mes in messages%}
-<div>{{mes.text}}&nbsp;<i>{{mes.tag}}</i></div>
+<div>{{mes.text}}
+	{% for tag in mes.tags%}
+	<b>{{tag.text}}</b>
+	{%endfor%}
+</div>
  {%endfor%}
 {%endblock%}
