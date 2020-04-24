@@ -1,4 +1,6 @@
-from planter import db # В папке planter есть init откуда берем db, адресация в питоне на уровне модулей
+from flask_login import UserMixin
+
+from planter import db, manager # В папке planter есть init откуда берем db, адресация в питоне на уровне модулей
 
 
 class Message(db.Model):
@@ -16,3 +18,12 @@ class Tag(db.Model):
 	text = db.Column(db.String(32), nullable=False)
 	message_id = db.Column(db.Integer, db.ForeignKey('message.id'), nullable=False)
 	message = db.relationship('Message', backref=db.backref('tags'), lazy=True)
+
+class User (db.Model, UserMixin):
+	id = id = db.Column(db.Integer, primary_key=True)
+	login = db.Column(db.String(128), nullable = False, unique = True)
+	password = db.Column(db.String(128), nullable = False)
+
+@manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
